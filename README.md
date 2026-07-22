@@ -2,83 +2,58 @@
 
 ---
 
-# Fable Method for PMs — 自适应版
+# Fable Method for PMs
 
-**Th ink / Act / Prove — 不再是固定模板� �输入场景，自动调整。**
+> Think / Act / Prove — 像优秀 PM 一样决策，6 维自适应
 
-## 和原� �� fable-method 的区别
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Erich956389473/fable-method-pm)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-| | fable-method� �原版） | Fable Method for PMs |
-|---|---| ---|
-| 领域 | 软件工程 | **产品管理 ** |
-| 核心输出 | 代码+测试 | **决� �+验证** |
-| 模板 | 固定 | **自适应� ��6个维度可调）** |
-| 语言 | 英文 |  **中文** |
-| 技能数 | 4个 | **3个** | 
+## ✨ 功能特性
 
-## 自适应维度一览
+- **6 步决策树** — 结构化决策流程
+- **对抗性验证** — 多角度验证假设
+- **P0/P1/P2 优先级** — 假设优先级排序
+- **自动拆解** — 复杂问题自动分解
 
-| 维度 | 可调 参数 | 影响 |
-|------|---------|------|
-|  分类树 | **industry** | SAAS/电商/内� �/金融/教育 → 不同分类 |
-| 证据� �略 | **stage** | 0-1侧重定性，成熟� �侧重定量 |
-| 失败阈值 | **risk** | � ��风险1次就换，高风险5次才停 |
-|  输出格式 | **audience** | 给老板1页� �要，给团队完整报告 |
-| 置信度 |  证据组合 | 用户访谈+数据→高，� �推理→低 |
-| 执行顺序 | **urgency**  | 紧急先执行后验证，常规标准流� �� |
-| **新增** | 多问题拆解 | 复杂� ��题自动拆成子问题独立处理 |
+## 🚀 快速开始
 
-##  技能
+### 作为 Agent Skill 使用
 
-| 技能 | 功能 | 自适应维度 | 
-|------|------|-----------|
-| **pm-method**  | 分类问题+定义路径 | industry, stage , risk, audience, urgency |
-| **pm-loop** | � ��行+跟踪 | stage, risk, urgency, deadline  |
-| **pm-judge** | 验证+质疑 | decisionT ype, risk, audience |
+`
+fable-method-pm
+  problem: 你的问题描述
+  context: 业务上下文
+  constraints: 限制条件
+`
 
-## 数据流与回退� ��制
+### 决策流程
 
-```
-pm-method → pm-loop → pm-judge 
-    ↑           ↑           │
-    │            │           │
-    │     失� �达到阈值       │
-    └────� �──────┘           │
-    ↑                        │
-    └──── ─── 验证结论 ──────┘
- ```
+1. **Think** — 定义问题和假设
+2. **Act** — 设计验证方案
+3. **Prove** — 收集证据和结论
 
-- pm-method 输出结构化决策路径� ��供 pm-loop 消费
-- pm-loop 执行后输� �假设验证记录，供 pm-judge 消费
-- p m-judge 输出决策日志，完成闭环
-- � ��假设失败次数达到阈值时，自动� ��退到 pm-method 重新定义问题
+## 📖 6 维分析
 
-## 参 数校验
+| 维度 | 说明 |
+|------|------|
+| 用户维度 | 用户需求和痛点 |
+| 市场维度 | 市场规模和竞争 |
+| 技术维度 | 技术可行性 |
+| 商业维度 | 商业模式和收益 |
+| 风险维度 | 风险识别和应对 |
+| 时间维度 | 时间线和优先级 |
 
-所有技能遵循统一的参数� ��验规则：
-- 未提供可选参数 → � �用默认值
-- 参数值非法 → 使用默 认值 + 输出警告
-- 必填参数缺失 � � 输出错误提示
+## 📦 技术栈
 
-## 用法示例
+- **类型:** Agent Skill (Markdown)
+- **格式:** SKILL.md
+- **兼容:** Claude Code, Cursor, Copilot
 
-```
-#  电商增长期 PM 遇到支付流失问题
-p m-method
-  problem: 支付页流失率从15%� ��到25%
-  industry: ecommerce
-  stage: growt h
-  risk: mid
-  audience: team
-  urgency: nor mal
+## 📄 License
 
-# 输出不再是固定模板，而是� �据你的场景动态调整
-```
+MIT License - 详见 [LICENSE](LICENSE)
 
-## 设计� �则
+---
 
-1. **场景决定流程** — 行业不 同分类不同，阶段不同证据不同
-2.  **风险决定深度** — 低风险快速� �行，高风险步步为营
-3. **受众决� �格式** — 给老板看结论，给团队� ��过程
-4. **证据决定置信度** — 不 说"我觉得"，说"数据表明"
- 
+**Author:** Erich Lee | [GitHub](https://github.com/Erich956389473)
